@@ -36,7 +36,7 @@ namespace Jelling
 
         private static GattLocalCharacteristicParameters CHR_PARAMS = new GattLocalCharacteristicParameters
         {
-            WriteProtectionLevel = GattProtectionLevel.EncryptionAndAuthenticationRequired,
+            WriteProtectionLevel = GattProtectionLevel.Plain,
             CharacteristicProperties = GattCharacteristicProperties.Write
                                      | GattCharacteristicProperties.ReliableWrites
                                      | GattCharacteristicProperties.ExtendedProperties,
