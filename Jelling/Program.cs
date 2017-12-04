@@ -94,6 +94,12 @@ namespace Jelling
         private async void SetupGatt()
         {
             var ba = await BluetoothAdapter.GetDefaultAsync();
+            if (ba == null)
+            {
+                notifyIcon.Text = String.Format("{0} (No Bluetooth adapter found!)", Application.ProductName);
+                return;
+            }
+
             if (!ba.IsPeripheralRoleSupported)
             {
                 notifyIcon.Text = String.Format("{0} (Peripheral mode not supported!)", Application.ProductName);
